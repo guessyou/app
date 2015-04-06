@@ -41,11 +41,9 @@ app.TodoView = Backbone.View.extend({
     },
 
     isHidden: function(){
-        var isCompleted = this.model.get('completed');
-        return (
-            (!isCompleted && app.TodoFilter === 'completed')
-            || (isCompleted && app.TodoFilter === 'active')
-        );
+        return this.model.get('completed') ?
+                app.TodoFilter === 'active' :
+                app.TodoFilter === 'completed';
     },
 
     toggleCompleted: function(){
