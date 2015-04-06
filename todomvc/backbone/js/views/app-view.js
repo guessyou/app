@@ -38,8 +38,8 @@ app.AppView = Backbone.View.extend({
     render: function(){
         var completed = app.Todos.completed().length;
         var remaining = app.Todos.remaining().length;
-
-        if( app.Todos.length ){
+        var todosNum = app.Todos.length;
+        if( todosNum ){
             this.$main.show();
             this.$footer.show();
 
