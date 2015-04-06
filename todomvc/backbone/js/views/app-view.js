@@ -12,7 +12,7 @@ app.AppView = Backbone.View.extend({
     statsTemplate: _.template( $('#stats-template').html() ),
 
     events: {
-        'kepress #new-todo': 'createOnEnter',
+        'keypress #new-todo': 'createOnEnter',
         'click #clear-completed': 'clearCompleted',
         'click #toggle-all': 'toggleAllComplete'
     },
