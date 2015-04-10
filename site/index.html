@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+    <head>
+        <meta charset="utf-8">
+        <title>Backbone.js Library</title>
+        <link rel="stylesheet" href="css/screen.css">
+    </head>
+    <body>
+        <div id="books">
+            <form action="#" id="addBook">
+                <div>
+                <label><span>CoverImage:</span> <input id="coverImage" type="file"></label><br>
+                    <label><span>Title:</span> <input id="title" type="text"></label>
+                    <label><span>Author:</span> <input id="author" type="text"></label><br>
+                    <label><span>Release Date:</span> <input id="releaseDate" type="text"></label>
+                    <label><span>Keywords:</span> <input id="keywords" type="text"></label>
+                    <button id="add">Add</button>
+                </div>
+            </form>
+
+            <div class="bookContainer">
+                <img src="img/placeholer.png" alt="">
+                <ul>
+                    <li>Title</li>
+                    <li>Author</li>
+                    <li>Release Date</li>
+                    <li>Keywords</li>
+                </ul>
+                <button class="delete">Delete</button>
+            </div> 
+        </div>
+        <script id="bookTemplate" type="text/template">
+            <img src="<%= coverImage %>" alt=""/>
+            <ul>
+                <li><%= title %></li>
+                <li><%= author %></li>
+                <li><%= releaseDate %></li>
+                <li><%= keywords %></li>
+            </ul>
+
+            <button class="delete">Delete</button>
+        </script>
+        <script src="node_modules/todomvc-common/base.js"></script>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/underscore/underscore.js"></script>
+        <script src="node_modules/backbone/backbone.js"></script>
+        <script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+        <script src="js/models/todo.js"></script>
+        <script src="js/collections/todos.js"></script>
+        <script src="js/views/todo-view.js"></script>
+        <script src="js/views/app-view.js"></script>
+        <script src="js/routers/router.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
