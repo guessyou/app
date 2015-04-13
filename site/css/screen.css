@@ -1,0 +1,13 @@
+body{ background: #eee;}
+.bookContainer{outline: 1px solid #aaa; width:350px;height:150px;background: #fff;float: left;margin: 5px;}
+.bookContainer img{float: left;margin: 10px;}
+.bookContainer ul{list-style-type: none;margin-bottom: 0;}
+.bookContainer button{float: right;margin: 10px;}
+#addBook label {display: inline-block; margin-bottom:10px;}
+#addBook label span{display: inline-block;width: 120px; text-align: right;margin-right: 10px;line-height: 24px;}
+#addBook input{padding:3px 5px; line-height: 22px; }
+#addBook button{display: block;margin:5px 20px 10px 10px; clear: both;}
+#addBook div{width: 800px;}
+#addBook div:after{content:"";display: block;height: 0;visibility: hidden;clear: both;font-size: 0;line-height: 0;}
+
+
