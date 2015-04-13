@@ -1,5 +1,5 @@
 body{ background: #eee;}
-.bookContainer{outline: 1px solid #aaa; width:350px;height:130px;background: #fff;float: left;margin: 5px;}
+.bookContainer{outline: 1px solid #aaa; width:350px;height:150px;background: #fff;float: left;margin: 5px;}
 .bookContainer img{float: left;margin: 10px;}
 .bookContainer ul{list-style-type: none;margin-bottom: 0;}
 .bookContainer button{float: right;margin: 10px;}
