@@ -23,7 +23,6 @@ var Book = new mongoose.Schema({
 
 var BookModel = mongoose.model( 'Book', Book );
 
-
 var error = function(err){
     return function(){
         if(err){
@@ -68,7 +67,7 @@ router.post('/api/books', function(req, res){
 
     book.save(function(err){
         error(err);
-        console.log('created');
+        console.log('    created');
         
     });
     return res.send(book);
@@ -161,7 +160,7 @@ router.delete('/api/books/:id', function(req, res){
     return BookModel.findById(params, function(err,book){
         return book.remove(function(err){
             error(err);
-            console.log('Book removed');
+            console.log('    Book removed');
             return res.send('');
         })
     })

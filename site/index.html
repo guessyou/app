@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Backbone.js Library</title>
         <link rel="stylesheet" href="css/screen.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
     </head>
     <body>
         <div id="books">
@@ -25,17 +26,21 @@
             <ul>
                 <li><%= title %></li>
                 <li><%= author %></li>
-                <li><%= releaseDate %></li>
-                <li><%= keywords %></li>
+                <li><%= DateFormat.format.date( new Date(releaseDate), 'MMMM yyyy') %></li>
+                <li><% _.each(keywords, function(keyobj){%>
+                    <%= keyobj.keyword %>
+                <%}) %></li>
             </ul>
 
             <button class="delete">Delete</button>
         </script>
-        <script src="node_modules/todomvc-common/base.js"></script>
+        <!-- // <script src="node_modules/todomvc-common/base.js"></script> -->
         <script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="node_modules/underscore/underscore.js"></script>
         <script src="node_modules/backbone/backbone.js"></script>
         <script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+        <script src="js/lib/dateFormat.js"></script>
+        <script src="js/lib/jquery-ui.js"></script>
         <script src="js/models/book.js"></script>
         <script src="js/collections/library.js"></script>
         <script src="js/views/book.js"></script>
