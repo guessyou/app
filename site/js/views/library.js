@@ -10,9 +10,11 @@ app.LibraryView = Backbone.View.extend({
 
     initialize: function(initialBooks){
         this.collection = new app.Library( initialBooks );
+        this.collection.fetch({reset: true});
         this.render();
 
         this.listenTo(this.collection, 'add', this.renderBook );
+        this.listenTo(this.collection, 'reset', this.render );
     },
 
     render: function(){
@@ -34,12 +36,27 @@ app.LibraryView = Backbone.View.extend({
         var formData = {};
 
         $('#addBook>div').find('input').each(function(i, el){
-            if( $(el).val() != '' ){
-                formData[el.id] = $(el).val();
+            var key = el.id,
+                value = $(el).val();
+            if( value != '' ){
+
+                if(key === 'keywords'){
+                    formData[key] = [];
+                    _.each( value.split(' '), function(keyword){
+                        formData[key].push({'keyword': keyword});
+                    });
+                }else if(key === 'releaseDate'){
+                    formData[key] = $('#releaseDate').datepicker('getDate').getTime();
+                }else{
+                    formData[key] = $(el).val();
+                }
+                
+                $(el).val('');
             }
         });
 
-        this.collection.add( new app.Book(formData) );
+        // this.collection.add( new app.Book(formData) );
+        this.collection.create( formData );
     }
 
 });
